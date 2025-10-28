@@ -34,4 +34,19 @@ public class Vehicle extends Asset {
         this.odometer = odometer;
     }
 
+    @Override
+    public double getValue() {
+        double value;
+        if (this.year >= 0 && this.year <= 3) {
+            value = this.originalCost - (this.originalCost * (this.year * 0.03));
+        } else if (this.year >= 4 && this.year <= 6) {
+            value = this.originalCost - (this.originalCost * (this.year * 0.06));
+        } else if (this.year >= 7 && this.year <= 10) {
+            value = this.originalCost - (this.originalCost * (this.year * 0.08));
+        } else {
+            value = 1000;
+        }
+        // TODO: return proper value based on other factors
+        return value;
+    }
 }

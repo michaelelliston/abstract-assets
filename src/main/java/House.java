@@ -5,10 +5,9 @@ public class House extends Asset {
     int squareFoot;
     int lotSize;
 
-    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squareFoot, int lotSize) {
+    public House(String description, String dateAcquired, double originalCost, String address, int squareFoot, int lotSize) {
         super(description, dateAcquired, originalCost);
         this.address = address;
-        this.condition = condition;
         this.squareFoot = squareFoot;
         this.lotSize = lotSize;
     }
@@ -49,6 +48,14 @@ public class House extends Asset {
     public double getValue() {
         double value = this.originalCost / this.squareFoot;
         value = value + (this.lotSize * 0.25);
-        return value;
+        if (value >= 180.00) {
+            return 1;
+        } else if (value >= 130.00 && value <= 179.99) {
+            return 2;
+        } else if (value >= 90.00 && value <= 129.99) {
+            return 3;
+        } else {
+            return 4;
+        }
     }
 }
