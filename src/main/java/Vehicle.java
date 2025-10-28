@@ -46,7 +46,13 @@ public class Vehicle extends Asset {
         } else {
             value = 1000;
         }
-        // TODO: return proper value based on other factors
+        if (this.odometer > 100000) {
+            if (this.makeModel.equalsIgnoreCase("Toyota") || this.makeModel.equalsIgnoreCase("Honda")) {
+                return value;
+            } else {
+                value -= value * 0.25;
+            }
+        }
         return value;
     }
 }
