@@ -23,6 +23,8 @@ public class Main {
             } else if (asset instanceof Vehicle) {
                 Vehicle castedAsset = (Vehicle) asset;
                 System.out.printf("This asset is %s, acquired %s, and is worth $%.2f. It is a %s, and is %d years old.\n", castedAsset.getDescription(), castedAsset.getDateAcquired(), castedAsset.getValue(), castedAsset.getMakeModel(), castedAsset.getYear());
+            } else {
+                System.out.println("Whatever object that is, it ain't a House or a Vehicle.");
             }
         }
     }
