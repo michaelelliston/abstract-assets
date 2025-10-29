@@ -1,4 +1,4 @@
-public class Asset {
+public abstract class Asset {
 
     String description;
     String dateAcquired;
@@ -26,7 +26,5 @@ public class Asset {
         this.dateAcquired = dateAcquired;
     }
 
-    public double getValue() {
-        return this.originalCost;
-    }
+    public abstract double getValue();
 }
