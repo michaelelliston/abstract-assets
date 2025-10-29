@@ -19,12 +19,20 @@ public class House extends Asset {
     public int getCondition() {
         double value = this.getValue();
         if (value >= 180.00) {
+            this.condition = 1;
+            System.out.println("Condition of " + this.getDescription() + " is excellent!");
             return 1;
         } else if (value >= 130.00 && value <= 179.99) {
+            this.condition = 2;
+            System.out.println("Condition of " + this.getDescription() + " is good!");
             return 2;
         } else if (value >= 90.00 && value <= 129.99) {
+            this.condition = 3;
+            System.out.println("Condition of " + this.getDescription() + " is fair.");
             return 3;
         } else {
+            this.condition = 4;
+            System.out.println("Condition of " + this.getDescription() + " is poor...");
             return 4;
         }
     }
